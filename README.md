@@ -30,7 +30,7 @@ A test case:
   }
 
 
-where expr is Parser[Expr]
+where expr, e are Parser[Expr] and Expr, respectively.
 
 How to use:
 * Install maven
