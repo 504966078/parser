@@ -1,6 +1,6 @@
 # parser
 
-A simple parser of DSL
+A simple parser for DSL.
 
 * Boolean operators: | (or) , & (and) , ^ (xor)
 * Algebra: +, - , /, *
@@ -8,7 +8,9 @@ A simple parser of DSL
 * Built-in functions: startsWith, max, min, lc, uc, exp, log, exists, date
 
 Examples:
-(1 + 2 - 3 = 0)  |  (-1)*7 > 0 -  
+
+
+(1 + 2 - 3 = 0)  |  (-1)*7 > 0 
 
 
 's1' + 's2' < 'aa' - literals
