@@ -30,6 +30,8 @@ A test case:
   }
 
 
+where expr is Parser[Expr]
+
 How to use:
 * Install maven
 * mvn test
