@@ -7,19 +7,27 @@ A simple parser for DSL.
 * Inequalities: <,<=, >, =>, !=, =
 * Built-in functions: startsWith, max, min, lc, uc, exp, log, exists, date
 
-Examples:
+A test case:
 
 
-(1 + 2 - 3 = 0)  |  (-1)*7 > 0 
-
-
-'s1' + 's2' < 'aa' - literals
-
-
-max(0,1)=1 - maximum
-
-
-startsWith(abcd,'a') - variable abcd starts with 'a'
+  test("evaluate expression"){
+    
+    val Success(e,_) = parseAll(expr,"startsWith(abcd,'a') & 1+globalvar/10-7>0")
+    
+    assert(true === e.evaluate(Map[Object,Any](
+        "globalvar" -> 70.0,
+        "abcd" -> "abcd")))
+    
+    assert(false === e.evaluate(Map[Object,Any](
+        "globalvar" -> 70.0,
+        "abcd" -> "bcd")))
+    
+    assert(false === e.evaluate(Map[Object,Any](
+        "globalvar" -> 0.0,
+        "abcd" -> "abcd")))
+    
+    assert(false === e.evaluate(Map[Object,Any]()))
+  }
 
 
 How to use:
